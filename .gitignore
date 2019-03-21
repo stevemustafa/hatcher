@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+
+#Arduino/Ino specific
+*.with_bootlader*.hex
+*.hex
