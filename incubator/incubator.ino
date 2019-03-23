@@ -5,15 +5,29 @@ int in1 = 9;
 
 
 #define DHT11_PIN 7
-#define tempUpperBound 27.0
-#define tempLowerBound 25.0
+#define PrimeTarget 37.5
+
+double tempUpperBound  = (PrimeTarget + 1.5);
+double tempLowerBound  = (PrimeTarget - 1.5);
+
 unsigned long seconds = 1000L; // !!! SEE THE CAPITAL "L" USED!!!
 unsigned long minutes = seconds * 60;
 unsigned long hours = minutes * 60;
 
 bool switchOn = false;
 
+
+void SetTemperatureBond() {
+  tempUpperBound = PrimeTarget + 1.5;
+  tempLowerBound = PrimeTarget - 1.5;
+}
+
 void setup() {
+  
+  //set temperatre bounds
+  
+  SetTemperatureBond();
+  
   pinMode(in1, OUTPUT);
   digitalWrite(in1, LOW);
   
